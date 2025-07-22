@@ -127,6 +127,42 @@ public class Sbi implements Rbi{
 	@Override
 	public void displayAllDetails() {
 		// TODO Auto-generated method stub
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/b193", "root", "root");
+			String query  =  "select * from account";
+			
+			Statement smt = con.createStatement();
+			
+			ResultSet set = smt.executeQuery(query);
+			
+			while(set.next())
+			{
+				 int accno = set.getInt(1);
+				 System.out.println("accno:"+accno);
+				 String name=set.getString(2);
+				 System.out.println("name:"+name);
+				 String mobno=set.getString(3);
+				 System.out.println("mobno:"+mobno);
+				 String aadharno=set.getString(4);
+				 System.out.println("aadharno:"+aadharno);
+				 String gender=set.getString(5);
+				 System.out.println("gender:"+gender);
+				 int age = set.getInt(6);
+				 System.out.println("age:"+age);
+			    int bal = set.getInt(7);
+			    System.out.println("balance:"+bal);
+			    System.out.println("---------------------------");
+			}
+			
+			con.close();
+			
+			
+		
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
