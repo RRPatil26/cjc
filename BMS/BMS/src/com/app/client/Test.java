@@ -43,7 +43,8 @@ public class Test {
 			sbi.balanceCheck();
 			break;
 		default:
-			System.out.println("Not right choice.....!!");
+			System.out.println("Not right choice what you enter.....!!");
+			System.out.println("Please enter your choice again.....!!");
 			break;
 		
 		}
