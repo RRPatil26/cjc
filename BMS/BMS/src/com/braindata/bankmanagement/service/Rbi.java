@@ -5,6 +5,6 @@ public interface Rbi {
 	public void displayAllDetails();
 	public void depositeMoney();
 	public void withdrawal();
-	public void balanceCheck();
+	public void checkBalance();
 
 }

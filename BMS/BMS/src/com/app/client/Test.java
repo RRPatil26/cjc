@@ -9,11 +9,11 @@ public class Test {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter 1 for createTable");
 		System.out.println("Enter 2 for createAccount");
-		System.out.println("Enter 3 for checkBalance");
+		System.out.println("Enter 3 for balanceCheck");
 		System.out.println("Enter 4 for displayAllDetails");
 		System.out.println("Enter 5 for depositeMoney");
 		System.out.println("Enter 6 for withdrawal");
-		System.out.println("Enter 7 for balanceCheck");
+		
 		
 		System.out.println("Enter Your choice:");
 		int ch=sc.nextInt();
@@ -39,9 +39,7 @@ public class Test {
 		case 6:
 			sbi.withdrawal();
 			break;
-		case 7:
-			sbi.balanceCheck();
-			break;
+		
 		default:
 			System.out.println("Not right choice what you enter.....!!");
 			System.out.println("Please enter your choice again.....!!");

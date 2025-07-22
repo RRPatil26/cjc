@@ -88,7 +88,7 @@ public class Sbi implements Rbi{
 		
 	}
 
-	
+	@Override
 	public void checkBalance()
 	{
 		
@@ -175,6 +175,8 @@ public class Sbi implements Rbi{
 		System.out.println("Enter Your amount to deposit:");
 		int amt = sc.nextInt();
 		
+		if (amt > 0) {
+	      		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/b193", "root", "root");
@@ -200,6 +202,10 @@ public class Sbi implements Rbi{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		}
+		else {
+			System.out.println("Deposit amount must be greater than zero.");
+		}
 		
 	}
 
@@ -211,7 +217,7 @@ public class Sbi implements Rbi{
 		int acn = sc.nextInt();
 		System.out.println("Enter Your amount to withdraw:");
 		int withdrwamt = sc.nextInt();
-		
+		if (withdrwamt > 0) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/b193", "root", "root");
@@ -245,12 +251,12 @@ public class Sbi implements Rbi{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		}
+		else {
+			System.out.println("Withdraw amount must be greater than zero.");
+		}
 		
 	}
 
-	@Override
-	public void balanceCheck() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }
